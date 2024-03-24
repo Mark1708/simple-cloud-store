@@ -1,0 +1,1 @@
+[engine:junit-jupiter]/[class:cloud.store.gateway.TestMainVerticle]/[method:verticle_deployed(io.vertx.core.Vertx, io.vertx.junit5.VertxTestContext)]

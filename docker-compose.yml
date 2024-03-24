@@ -1,0 +1,76 @@
+version: '3'
+
+services:
+  db:
+    container_name: store-db
+    image: postgres:alpine
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASS}
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: [ "CMD-SHELL", "sh -c 'pg_isready -U ${DB_USER} -d ${DB_NAME}'" ]
+      interval: 3s
+      timeout: 5s
+      retries: 5
+    restart: always
+    volumes:
+      - ./init:/docker-entrypoint-initdb.d
+
+  catalog:
+    container_name: catalog
+    image: catalog
+    build:
+      context: ./catalog-spring-boot
+      dockerfile: ./Dockerfile
+    env_file: .env
+    environment:
+      DB_NAME: catalog_db
+    depends_on:
+      - db
+
+  inventory:
+    container_name: inventory
+    image: inventory
+    build:
+      context: ./inventory-quarkus
+      dockerfile: ./Dockerfile
+    env_file: .env
+    environment:
+      DB_NAME: inventory_db
+    depends_on:
+      - db
+
+  gateway:
+    container_name: gateway
+    image: gateway
+    build:
+      context: ./gateway-vertx
+      dockerfile: ./Dockerfile
+    environment:
+      HTTP_PORT: 8080
+      CATALOG_HOST: catalog
+      CATALOG_PORT: 8080
+      INVENTORY_HOST: inventory
+      INVENTORY_PORT: 8080
+    ports:
+      - "8080:8080"
+    depends_on:
+      - catalog
+      - inventory
+
+  web:
+    container_name: web
+    image: web
+    build:
+      context: ./web-nodejs-angular
+      dockerfile: ./Dockerfile
+    environment:
+      PORT: 3000
+      COOLSTORE_GW_ENDPOINT: http://localhost:8080
+    ports:
+      - "3000:3000"
+    depends_on:
+      - gateway

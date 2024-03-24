@@ -1,0 +1,11 @@
+{
+  "resources": {
+    "includes": [
+      {"pattern": "META-INF/naticloud.store.gateway.*"},
+      {"pattern": "META-INF/vertx/vertx-version.txt"},
+      {"pattern": "conf/config.json"}
+    ],
+    "excludes": [
+    ]
+  }
+}

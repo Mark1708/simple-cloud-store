@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="cloud.store.gateway.TestMainVerticle" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-03-24T21:20:04" hostname="MARK" time="0.215">
+  <properties/>
+  <testcase name="verticle_deployed(Vertx, VertxTestContext)" classname="cloud.store.gateway.TestMainVerticle" time="0.215"/>
+  <system-out><![CDATA[java.specification.version 21
+sun.cpu.isalist amd64
+sun.jnu.encoding Cp1252
+org.gradle.test.worker 1
+java.class.path C:\\Users\\mguri\\.gradle\\caches\\8.5\\workerMain\\gradle-worker.jar;D:\\Document\\Programming\\JavaProjects\\simple-cloud-store\\gateway-vertx\\build\\classes\\java\\test;D:\\Document\\Programming\\JavaProjects\\simple-cloud-store\\gateway-vertx\\build\\classes\\java\\main;D:\\Document\\Programming\\JavaProjects\\simple-cloud-store\\gateway-vertx\\build\\resources\\main;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\io.vertx\\vertx-health-check\\4.4.8\\faa0832247303e1606b07f04c2b665c7dd611c7b\\vertx-health-check-4.4.8.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\io.vertx\\vertx-web\\4.4.8\\33bb36cf2c593bba039ee1da46eeaa1a977aa5ab\\vertx-web-4.4.8.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\io.vertx\\vertx-junit5\\4.4.8\\cb660f46554f1a012db870d0f29d6e2af095f18f\\vertx-junit5-4.4.8.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\io.vertx\\vertx-rx-java3\\4.4.8\\56420854cbc8238241a995dc6119ca8d8f02d7e9\\vertx-rx-java3-4.4.8.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\io.vertx\\vertx-web-client\\4.4.8\\6ed0688fc210743fc6141f2699781dc502796e08\\vertx-web-client-4.4.8.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\io.vertx\\vertx-config\\4.4.8\\16f436711eeea5abeefbd33dbd35244478531ed0\\vertx-config-4.4.8.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\io.vertx\\vertx-auth-common\\4.4.8\\7bc653fd79c64ea8a436f59faf9972be805c5602\\vertx-auth-common-4.4.8.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\io.vertx\\vertx-rx-java3-gen\\4.4.8\\6dd730c310e75361ec0137c81a416333eb526278\\vertx-rx-java3-gen-4.4.8.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\io.vertx\\vertx-rx-gen\\4.4.8\\58005f94e21a8578263046583de3b844570dfa9d\\vertx-rx-gen-4.4.8.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\io.vertx\\vertx-web-common\\4.4.8\\9490149d45294749f8fe88ab3ecfbea09f01983c\\vertx-web-common-4.4.8.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\io.vertx\\vertx-bridge-common\\4.4.8\\42f9951a454dca4b734b38fb14bf2c14d384ff71\\vertx-bridge-common-4.4.8.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\io.vertx\\vertx-uri-template\\4.4.8\\854652c2fce1b8397cca7beae37374b164ffba6d\\vertx-uri-template-4.4.8.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\io.vertx\\vertx-core\\4.4.8\\8ee6e76e116d5007cfed3910c16d4ac2ce9584ad\\vertx-core-4.4.8.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\org.slf4j\\slf4j-simple\\2.0.12\\5fb15030fb6158ef4f63ce4f889f72f4259a7bc3\\slf4j-simple-2.0.12.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\org.slf4j\\slf4j-api\\2.0.12\\48f109a2a6d8f446c794f3e3fa0d86df0cdfa312\\slf4j-api-2.0.12.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\org.graalvm.buildtools\\junit-platform-native\\0.9.28\\8080b84eee8ed37d8a937d8a0f22184071b7867a\\junit-platform-native-0.9.28.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\org.junit.platform\\junit-platform-console\\1.10.0\\9901db09e60bf678e4a22fd4be564f10aa7c585\\junit-platform-console-1.10.0.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\org.junit.platform\\junit-platform-reporting\\1.10.0\\d0bf1dc2f224e41439c65af66cd75dc13dec670e\\junit-platform-reporting-1.10.0.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\org.junit.platform\\junit-platform-launcher\\1.10.0\\89a1922534ed102be1fb2a8c0b2c6151297a12bf\\junit-platform-launcher-1.10.0.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\org.junit.jupiter\\junit-jupiter-engine\\5.10.0\\90587932d718fc51a48112d33045a18476c542ad\\junit-jupiter-engine-5.10.0.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\org.junit.jupiter\\junit-jupiter-params\\5.10.0\\9041c7365495a897a64782ea5a6fdb99dab1814e\\junit-jupiter-params-5.10.0.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\org.junit.jupiter\\junit-jupiter-api\\5.10.0\\2fe4ba3d31d5067878e468c96aa039005a9134d3\\junit-jupiter-api-5.10.0.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\org.junit.platform\\junit-platform-engine\\1.10.0\\276c4edcf64fabb5a139fa7b4f99330d7a93b804\\junit-platform-engine-1.10.0.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\org.junit.platform\\junit-platform-commons\\1.10.0\\d533ff2c286eaf963566f92baf5f8a06628d2609\\junit-platform-commons-1.10.0.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\org.junit.jupiter\\junit-jupiter\\5.10.0\\8fea1d9c58b2156f1b998f2f18da04bc9e087f74\\junit-jupiter-5.10.0.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\io.netty\\netty-handler-proxy\\4.1.106.Final\\bffc88b7c56d7b553453e4244247a1b0ba1fdc8a\\netty-handler-proxy-4.1.106.Final.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\io.netty\\netty-codec-http2\\4.1.106.Final\\41515e8c51eeaaddceabdb4f86fbc5dbfc25b70e\\netty-codec-http2-4.1.106.Final.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\io.netty\\netty-codec-http\\4.1.106.Final\\21a07cdf0fc46b313fe2248f1275cdbdac0ba87b\\netty-codec-http-4.1.106.Final.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\io.netty\\netty-resolver-dns\\4.1.106.Final\\3970474ed55aa1e3e8de5a5602c342c6b8155371\\netty-resolver-dns-4.1.106.Final.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\io.netty\\netty-handler\\4.1.106.Final\\874c970c4ff958b1140dde52bc17e6a9e7cde662\\netty-handler-4.1.106.Final.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\io.netty\\netty-transport-native-unix-common\\4.1.106.Final\\2da179bd95903f0fa73218b8f0d02690c0cfbc94\\netty-transport-native-unix-common-4.1.106.Final.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\io.netty\\netty-codec-socks\\4.1.106.Final\\129f9bd6aa0cf28bfd7d45a8b6a598eed9c67702\\netty-codec-socks-4.1.106.Final.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\io.netty\\netty-codec-dns\\4.1.106.Final\\9d4b3315bb625ec2d73fa569fb6bce4589243d5e\\netty-codec-dns-4.1.106.Final.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\io.netty\\netty-codec\\4.1.106.Final\\25171b63aa1e7a5fd8a7e4e660d6d3110241ea7\\netty-codec-4.1.106.Final.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\io.netty\\netty-transport\\4.1.106.Final\\8fcca44ae16b98e15965093e7696832019fd6f27\\netty-transport-4.1.106.Final.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\io.netty\\netty-buffer\\4.1.106.Final\\c5495ba59a627641b3a7c23f6bcb801874c7f7b0\\netty-buffer-4.1.106.Final.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\io.netty\\netty-resolver\\4.1.106.Final\\e185ae573db04939215f94d6ba869758dcecbde9\\netty-resolver-4.1.106.Final.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\io.netty\\netty-common\\4.1.106.Final\\132defb4689f41b51b483b7202b22b6e89fe35fd\\netty-common-4.1.106.Final.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\io.vertx\\vertx-codegen\\4.4.8\\8cbda8d0506684c1dab728b4a59b9dc9a997ba42\\vertx-codegen-4.4.8.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\com.fasterxml.jackson.core\\jackson-core\\2.15.0\\12f334a1dc9c6d2854c43ae314024dde8b3ad572\\jackson-core-2.15.0.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\ch.randelshofer\\fastdoubleparser\\0.8.0\\85c25540369921659556ead85e02c99ef0d24280\\fastdoubleparser-0.8.0.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\io.reactivex.rxjava3\\rxjava\\3.0.13\\2d8852fa0d83b346499fbabe3233cdea7c0f4095\\rxjava-3.0.13.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\org.reactivestreams\\reactive-streams\\1.0.3\\d9fb7a7926ffa635b3dcaa5049fb2bfa25b3e7d0\\reactive-streams-1.0.3.jar;C:\\Users\\mguri\\.gradle\\caches\\modules-2\\files-2.1\\org.opentest4j\\opentest4j\\1.3.0\\152ea56b3a72f655d4fd677fc0ef2596c3dd5e6e\\opentest4j-1.3.0.jar
+java.vm.vendor Oracle Corporation
+sun.arch.data.model 64
+user.variant 
+java.vendor.url https://java.oracle.com/
+user.timezone Europe/Moscow
+java.vm.specification.version 21
+os.name Windows 11
+user.country RU
+sun.java.launcher SUN_STANDARD
+sun.boot.library.path C:\Program Files\Java\graalvm-jdk-21.0.2\bin
+sun.java.command worker.org.gradle.process.internal.worker.GradleWorkerMain 'Gradle Test Executor 1'
+jdk.debug release
+sun.cpu.endian little
+user.home C:\Users\mguri
+user.language ru
+java.specification.vendor Oracle Corporation
+org.gradle.native false
+java.version.date 2024-01-16
+java.home C:\Program Files\Java\graalvm-jdk-21.0.2
+file.separator \
+java.vm.compressedOopsMode 32-bit
+jdk.internal.vm.ci.enabled true
+line.separator 
+
+java.vm.specification.vendor Oracle Corporation
+java.specification.name Java Platform API Specification
+junit.platform.listeners.uid.tracking.enabled true
+user.script 
+sun.management.compiler HotSpot 64-Bit Tiered Compilers
+junit.platform.listeners.uid.tracking.output.dir D:\Document\Programming\JavaProjects\simple-cloud-store\gateway-vertx\build\test-results\test\testlist
+java.runtime.version 21.0.2+13-LTS-jvmci-23.1-b30
+user.name mguri
+stdout.encoding Cp1252
+path.separator ;
+os.version 10.0
+java.runtime.name Java(TM) SE Runtime Environment
+file.encoding UTF-8
+java.vm.name Java HotSpot(TM) 64-Bit Server VM
+org.vertx.logger-delegate-factory-class-name io.vertx.core.logging.SLF4JLogDelegateFactory
+java.vendor.version Oracle GraalVM 21.0.2+13.1
+java.vendor.url.bug https://bugreport.java.com/bugreport/
+java.io.tmpdir C:\Users\mguri\AppData\Local\Temp\
+java.version 21.0.2
+user.dir D:\Document\Programming\JavaProjects\simple-cloud-store\gateway-vertx
+os.arch amd64
+java.vm.specification.name Java Virtual Machine Specification
+org.gradle.internal.worker.tmpdir D:\Document\Programming\JavaProjects\simple-cloud-store\gateway-vertx\build\tmp\test\work
+sun.os.patch.level 
+native.encoding Cp1252
+java.library.path C:\Program Files\Java\graalvm-jdk-21.0.2\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\dotnet\;C:\Program Files\Go\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\Git\cmd;C:\Users\mguri\AppData\Local\Programs\Python\Launcher\;C:\Users\mguri\AppData\Local\Microsoft\WindowsApps;C:\Users\mguri\AppData\Local\JetBrains\Toolbox\scripts;C:\Users\mguri\go\bin;.
+java.vm.info mixed mode, sharing
+stderr.encoding Cp1252
+java.vendor Oracle Corporation
+java.vm.version 21.0.2+13-LTS-jvmci-23.1-b30
+sun.io.unicode.encoding UnicodeLittle
+java.class.version 65.0
+USERDOMAIN_ROAMINGPROFILE MARK
+PROCESSOR_LEVEL 25
+SESSIONNAME Console
+ALLUSERSPROFILE C:\ProgramData
+PROCESSOR_ARCHITECTURE AMD64
+AMDRMSDKPATH C:\Program Files\AMD\RyzenMasterSDK\
+GATEWAY_VM_OPTIONS D:\MySystemSettings\IDE Settings\jetbra\vmoptions\gateway.vmoptions
+PSModulePath C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
+SystemDrive C:
+RIDER_VM_OPTIONS D:\MySystemSettings\IDE Settings\jetbra\vmoptions\rider.vmoptions
+USERNAME mguri
+DEVECOSTUDIO_VM_OPTIONS D:\MySystemSettings\IDE Settings\jetbra\vmoptions\devecostudio.vmoptions
+STUDIO_VM_OPTIONS D:\MySystemSettings\IDE Settings\jetbra\vmoptions\studio.vmoptions
+ProgramFiles(x86) C:\Program Files (x86)
+FPS_BROWSER_USER_PROFILE_STRING Default
+PATHEXT .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+APPCODE_VM_OPTIONS D:\MySystemSettings\IDE Settings\jetbra\vmoptions\appcode.vmoptions
+DriverData C:\Windows\System32\Drivers\DriverData
+GOPATH C:\Users\mguri\go
+DATASPELL_VM_OPTIONS D:\MySystemSettings\IDE Settings\jetbra\vmoptions\dataspell.vmoptions
+ProgramData C:\ProgramData
+ProgramW6432 C:\Program Files
+HOMEPATH \Users\mguri
+PROCESSOR_IDENTIFIER AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD
+ProgramFiles C:\Program Files
+PUBLIC C:\Users\Public
+windir C:\Windows
+=:: ::\
+DATAGRIP_VM_OPTIONS D:\MySystemSettings\IDE Settings\jetbra\vmoptions\datagrip.vmoptions
+LOCALAPPDATA C:\Users\mguri\AppData\Local
+USERDOMAIN MARK
+FPS_BROWSER_APP_PROFILE_STRING Internet Explorer
+LOGONSERVER \\MARK
+PYCHARM_VM_OPTIONS D:\MySystemSettings\IDE Settings\jetbra\vmoptions\pycharm.vmoptions
+WEBSTORM_VM_OPTIONS D:\MySystemSettings\IDE Settings\jetbra\vmoptions\webstorm.vmoptions
+CLION_VM_OPTIONS D:\MySystemSettings\IDE Settings\jetbra\vmoptions\clion.vmoptions
+JETBRAINSCLIENT_VM_OPTIONS D:\MySystemSettings\IDE Settings\jetbra\vmoptions\jetbrainsclient.vmoptions
+GOLAND_VM_OPTIONS D:\MySystemSettings\IDE Settings\jetbra\vmoptions\goland.vmoptions
+OneDrive C:\Users\mguri\OneDrive
+APPDATA C:\Users\mguri\AppData\Roaming
+EFC_8588 1
+IDEA_VM_OPTIONS D:\MySystemSettings\IDE Settings\jetbra\vmoptions\idea.vmoptions
+RUBYMINE_VM_OPTIONS D:\MySystemSettings\IDE Settings\jetbra\vmoptions\rubymine.vmoptions
+JETBRAINS_CLIENT_VM_OPTIONS D:\MySystemSettings\IDE Settings\jetbra\vmoptions\jetbrains_client.vmoptions
+CommonProgramFiles C:\Program Files\Common Files
+Path C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\dotnet\;C:\Program Files\Go\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\Git\cmd;C:\Users\mguri\AppData\Local\Programs\Python\Launcher\;C:\Users\mguri\AppData\Local\Microsoft\WindowsApps;C:\Users\mguri\AppData\Local\JetBrains\Toolbox\scripts;C:\Users\mguri\go\bin
+OS Windows_NT
+COMPUTERNAME MARK
+PROCESSOR_REVISION 6102
+CommonProgramW6432 C:\Program Files\Common Files
+ComSpec C:\Windows\system32\cmd.exe
+SystemRoot C:\Windows
+TEMP C:\Users\mguri\AppData\Local\Temp
+WEBIDE_VM_OPTIONS D:\MySystemSettings\IDE Settings\jetbra\vmoptions\webide.vmoptions
+HOMEDRIVE C:
+USERPROFILE C:\Users\mguri
+TMP C:\Users\mguri\AppData\Local\Temp
+CommonProgramFiles(x86) C:\Program Files (x86)\Common Files
+NUMBER_OF_PROCESSORS 24
+PHPSTORM_VM_OPTIONS D:\MySystemSettings\IDE Settings\jetbra\vmoptions\phpstorm.vmoptions
+IDEA_INITIAL_DIRECTORY C:\Windows\system32
+http.port 8090
+catalog.host localhost
+catalog.port 9000
+inventory.host localhost
+inventory.port 8080
+]]></system-out>
+  <system-err><![CDATA[мар. 25, 2024 12:20:04 AM io.vertx.config.impl.ConfigRetrieverImpl
+INFO: Config file path: C:\Users\mguri\AppData\Local\Temp\vertx-cache-d11c502c-2a31-43fe-be8c-0b0b51fad256\conf\config.json, format:json
+]]></system-err>
+</testsuite>
