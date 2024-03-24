@@ -5,3 +5,5 @@
 *.sh linguist-vendored
 gradlew linguist-vendored
 www linguist-vendored
+gateway-vertx linguist-vendored
+build/* linguist-vendored
