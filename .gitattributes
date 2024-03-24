@@ -3,3 +3,5 @@
 *.js linguist-vendored
 *.bat linguist-vendored
 *.sh linguist-vendored
+gradlew linguist-vendored
+www linguist-vendored
