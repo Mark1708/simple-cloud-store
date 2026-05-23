@@ -2,10 +2,10 @@ import org.springframework.boot.gradle.tasks.aot.ProcessAot
 
 plugins {
 	java
-	id("org.springframework.boot") version "3.2.4"
-	id("io.spring.dependency-management") version "1.1.4"
-	id("org.hibernate.orm") version "6.4.4.Final"
-	id("org.graalvm.buildtools.native") version "0.9.28"
+	id("org.springframework.boot") version "3.5.14"
+	id("io.spring.dependency-management") version "1.1.7"
+	id("org.hibernate.orm") version "6.6.13.Final"
+	id("org.graalvm.buildtools.native") version "0.10.6"
 }
 
 group = "cloud.store"
@@ -29,6 +29,7 @@ dependencies {
 	runtimeOnly("org.postgresql:postgresql")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testRuntimeOnly("com.h2database:h2")
 }
 
 tasks.withType<Test> {

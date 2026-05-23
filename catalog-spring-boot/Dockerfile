@@ -1,5 +1,12 @@
-FROM ubuntu:latest
+FROM eclipse-temurin:21-jdk-alpine AS build
 WORKDIR /app
-COPY build/native/nativeCompile/catalog .
+COPY gradle gradle
+COPY gradlew build.gradle.kts settings.gradle.kts ./
+COPY src src
+RUN ./gradlew bootJar -x test --no-daemon
+
+FROM eclipse-temurin:21-jre-alpine
+WORKDIR /app
+COPY --from=build /app/build/libs/*.jar catalog.jar
 EXPOSE 8080
-ENTRYPOINT ["/app/catalog"]
+ENTRYPOINT ["java", "-jar", "/app/catalog.jar"]
