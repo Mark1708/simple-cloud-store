@@ -1,7 +1,0 @@
-{
-  "http.port": 8090,
-  "catalog.host": "localhost",
-  "catalog.port": 9000,
-  "inventory.host": "localhost",
-  "inventory.port": 8080
-}
