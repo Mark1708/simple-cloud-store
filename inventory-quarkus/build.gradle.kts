@@ -24,6 +24,7 @@ dependencies {
     implementation("io.quarkus:quarkus-flyway")
 
     testImplementation("io.quarkus:quarkus-junit5")
+    testImplementation("io.quarkus:quarkus-jdbc-h2")
     testImplementation("io.rest-assured:rest-assured")
 }
 
@@ -41,11 +42,4 @@ tasks.withType<Test> {
 tasks.withType<JavaCompile> {
     options.encoding = "UTF-8"
     options.compilerArgs.add("-parameters")
-}
-
-tasks.quarkusBuild {
-    nativeArgs {
-        "container-build" to true
-        "builder-image" to "quay.io/quarkus/ubi-quarkus-mandrel-builder-image:jdk-21"
-    }
 }
