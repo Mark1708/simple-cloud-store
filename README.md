@@ -1,44 +1,68 @@
 # simple-cloud-store
 
-## Описание
-Это простой онлайн магазин состоящий из 3 микросервисов реализованных на Java, но с помощью разных фреймворков, а именно:
-- Spring Boot
-- Quarkus
-- Vert.x
+[Русская версия](README.ru.md)
 
-Также есть UI реализованный на Node.js и AngularJS. 
+## Overview
 
-## Архитектура
-<img src="assets/coolstore-arch.png" width="400" alt="Coolstore Architecture">
+Full-stack microservices demo exploring different Java frameworks (Spring Boot, Quarkus, Vert.x) in a single application. Sandbox project for comparing framework styles and learning cloud infrastructure patterns.
 
-- сервис каталога (Catalog Service) - использует RESТ АРІ для доступа к содержимому каталога, хранящегося в реляционной базе данных;
-- сервис описи запасов (Inventory Service) - использует RESТ АРІ для доступа к описи запасов товаров, хранящейся в реляционной базе данных;
-- сервис шлюза (Gateway Service) - принимает запросы и передает их сервису каталогов или сервису описи запасов;
-- сервис веб-интерфейса (WebUl Service) - вызывает сервис шлюза, чтобы получить необходимую информацию.
+## Architecture
 
-## Запуск
+![Architecture](assets/coolstore-arch.png)
+
+## Services
+
+- **Catalog Service** (Spring Boot) -- REST API for product catalog, backed by PostgreSQL
+- **Inventory Service** (Quarkus) -- REST API for inventory management, backed by PostgreSQL
+- **Gateway Service** (Vert.x) -- API gateway routing requests to catalog and inventory
+- **Web UI** (Node.js + AngularJS) -- storefront calling the gateway
+
+## Tech stack
+
+- Java 21, GraalVM
+- Spring Boot 3.5.14
+- Quarkus 3.33.1 LTS
+- Vert.x 4.5.22
+- Node.js 22 LTS
+- AngularJS 1.8 legacy/frozen
+- Docker
+
+## Quick start
+
+1. Copy the environment template:
+
+```shell
+cp .env.example .env
+```
+
+2. Fill in the placeholder values in `.env`.
+3. Start the services:
+
 ```shell
 docker compose up -d
 ```
 
-## Технологии
-- Spring Boot v3.2.4
-- Quarkus v3.8.3
-- Vert.x v4.4.8
-- Java 21
-- GraalVM
-- Node.js
-- AngularJS v1.8.0
-- Docker
+4. Open the web UI at `http://localhost:3000`.
 
-## Статус
-Проект _В разработке_
+## Hygiene
 
-## Цель
-Ознакомиться с новыми фреймворками и развернуть проект в облачной инфраструктуре
+- Keep config examples secret-free; replace all placeholder values before use.
+- Keep service-specific runtime settings in environment variables or local profiles.
+- This is a demo setup with no production authentication, payments, or user management.
 
-## Контакты
-Выполнен [Гурьяновым Марком](https://mark1708.github.io/)
-#### +7(962)024-50-04 | mark1708.work@gmail.com | [github](http://github.com/Mark1708)
+## Verification notes
 
-![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=Mark1708&repo=simple-cloud-store&theme=chartreuse-dark&show_icons=true)
+- Java service tests are expected to run with local H2-backed test settings.
+- For the legacy Web UI, `node --check server.js` is the current supported syntax check.
+- The historical `npm run lint` and `npm run security-check` scripts are kept for traceability but are known legacy scripts: the XO stack is not compatible with the current Node.js runtime, and `nsp` is discontinued.
+
+## Limitations
+
+- AngularJS 1.8 is intentionally kept as a legacy frontend layer. It is end-of-life and frozen in this repository.
+- The frontend is not being rewritten to React, Vue, or modern Angular as part of this demo.
+- Spring Boot, Quarkus, Vert.x, and Node.js services remain separate on purpose so the repository can compare framework styles.
+- This project is not production-ready and should not be used as a template for production authentication, payments, or user accounts.
+
+## Status
+
+- Sandbox / learning project.
