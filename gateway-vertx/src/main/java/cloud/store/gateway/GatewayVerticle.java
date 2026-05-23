@@ -53,7 +53,7 @@ public class GatewayVerticle extends AbstractVerticle {
         runServer(router, gwConf.getPort());
       },
       e -> {
-        throw new RuntimeException("Clients creation error", e);
+        log.error("Failed to initialize gateway configuration", e);
       }
     );
   }
@@ -105,9 +105,11 @@ public class GatewayVerticle extends AbstractVerticle {
       )
       .subscribe(
         list -> rc.response().end(list.encodePrettily()),
-        error -> rc.response().setStatusCode(500).end(
-          new JsonObject().put("error", error.getMessage()
-          ).toString())
+        error -> {
+          log.error("Failed to fetch products", error);
+          rc.response().setStatusCode(500).end(
+            new JsonObject().put("error", "Failed to fetch product data").toString());
+        }
       );
   }
 

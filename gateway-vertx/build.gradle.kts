@@ -5,7 +5,7 @@ plugins {
   java
   application
   id("com.github.johnrengelman.shadow") version "7.1.2"
-  id("org.graalvm.buildtools.native") version "0.9.28"
+  id("org.graalvm.buildtools.native") version "0.10.6"
 }
 
 group = "cloud.store"
@@ -15,7 +15,7 @@ repositories {
   mavenCentral()
 }
 
-val vertxVersion = "4.4.8"
+val vertxVersion = "4.5.22"
 val junitJupiterVersion = "5.9.1"
 
 val mainVerticleName = "cloud.store.gateway.GatewayVerticle"

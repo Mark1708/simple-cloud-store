@@ -6,25 +6,25 @@ import java.util.Optional;
 
 public class GatewayConfig {
 
-  private Integer port;
-  private Integer catalogPort;
-  private String catalogHost;
-  private Integer inventoryPort;
-  private String inventoryHost;
+  private final int port;
+  private final int catalogPort;
+  private final String catalogHost;
+  private final int inventoryPort;
+  private final String inventoryHost;
 
   public GatewayConfig(JsonObject config) {
-    this.port = Integer.parseInt(getProperties("http.port", "HTTP_PORT", config));
-    this.catalogHost = getProperties("catalog.host", "CATALOG_HOST", config);
-    this.catalogPort = Integer.parseInt(getProperties("catalog.port", "CATALOG_PORT", config));
-    this.inventoryHost = getProperties("inventory.host", "INVENTORY_HOST", config);
-    this.inventoryPort = Integer.parseInt(getProperties("inventory.port", "INVENTORY_PORT", config));
+    this.port = parseIntProperty("http.port", "HTTP_PORT", config);
+    this.catalogHost = requireStringProperty("catalog.host", "CATALOG_HOST", config);
+    this.catalogPort = parseIntProperty("catalog.port", "CATALOG_PORT", config);
+    this.inventoryHost = requireStringProperty("inventory.host", "INVENTORY_HOST", config);
+    this.inventoryPort = parseIntProperty("inventory.port", "INVENTORY_PORT", config);
   }
 
-  public Integer getPort() {
+  public int getPort() {
     return port;
   }
 
-  public Integer getCatalogPort() {
+  public int getCatalogPort() {
     return catalogPort;
   }
 
@@ -32,7 +32,7 @@ public class GatewayConfig {
     return catalogHost;
   }
 
-  public Integer getInventoryPort() {
+  public int getInventoryPort() {
     return inventoryPort;
   }
 
@@ -40,11 +40,20 @@ public class GatewayConfig {
     return inventoryHost;
   }
 
-  public static String getProperties(String configKey, String envKey, JsonObject config) {
+  private static String requireStringProperty(String configKey, String envKey, JsonObject config) {
     return Optional.ofNullable(config.getString(envKey))
-      .orElse(
-        Optional.ofNullable(config.getString(configKey))
-          .orElseThrow(() -> new RuntimeException("Please set one of variables: " + configKey + ", " + envKey))
-      );
+      .or(() -> Optional.ofNullable(config.getString(configKey)))
+      .orElseThrow(() -> new IllegalArgumentException(
+        "Required configuration missing: set one of " + configKey + " or " + envKey));
+  }
+
+  private static int parseIntProperty(String configKey, String envKey, JsonObject config) {
+    String value = requireStringProperty(configKey, envKey, config);
+    try {
+      return Integer.parseInt(value);
+    } catch (NumberFormatException e) {
+      throw new IllegalArgumentException(
+        "Invalid integer value for " + configKey + "/" + envKey + ": '" + value + "'", e);
+    }
   }
 }
