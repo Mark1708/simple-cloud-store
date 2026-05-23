@@ -25,8 +25,8 @@ require('./middleware/boom')(app)
 
 // error handling
 app.use(function (err, req, res, next) {
-    console.error(err.stack);
-    res.status(500).send('Something bad happened!');
+    console.error('Unexpected server error:', err);
+    res.status(500).json({ error: 'Internal server error' });
 });
 
 app.use('/', express.static(path.join(__dirname, 'views')));
