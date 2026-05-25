@@ -1,0 +1,47 @@
+.coolstore-page {
+  min-height: 100vh;
+}
+
+.coolstore-header {
+  min-height: 4rem;
+  padding: 0 1.5rem;
+}
+
+.coolstore-brand {
+  align-items: center;
+  color: var(--pf-t--global--text--color--inverse, #fff);
+  display: inline-flex;
+  font-weight: 600;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.coolstore-logo {
+  max-height: 2.5rem;
+}
+
+.coolstore-card {
+  height: 100%;
+}
+
+.coolstore-card-image {
+  justify-content: center;
+}
+
+.coolstore-card-image img {
+  border-radius: 50%;
+  height: 8rem;
+  object-fit: contain;
+  width: 8rem;
+}
+
+.coolstore-card-footer {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.coolstore-stock-empty {
+  color: var(--pf-t--global--color--status--danger--default, #c9190b);
+  font-weight: 600;
+}
