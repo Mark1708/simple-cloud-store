@@ -3,7 +3,6 @@ package cloud.store.catalog;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-
 import java.io.Serializable;
 
 @Entity
@@ -21,8 +20,7 @@ public class Product implements Serializable {
 
     private double price;
 
-    public Product() {
-    }
+    public Product() {}
 
     public String getItemId() {
         return itemId;
