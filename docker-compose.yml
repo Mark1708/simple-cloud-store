@@ -30,7 +30,8 @@ services:
       DB_USER: ${DB_USER:-cs_user}
       DB_PASS: ${DB_PASS:-change-me}
     depends_on:
-      - db
+      db:
+        condition: service_healthy
 
   inventory:
     container_name: inventory
@@ -45,7 +46,8 @@ services:
       DB_USER: ${DB_USER:-cs_user}
       DB_PASS: ${DB_PASS:-change-me}
     depends_on:
-      - db
+      db:
+        condition: service_healthy
 
   gateway:
     container_name: gateway
@@ -62,18 +64,20 @@ services:
     ports:
       - "8080:8080"
     depends_on:
-      - catalog
-      - inventory
+      catalog:
+        condition: service_started
+      inventory:
+        condition: service_started
 
   web:
     container_name: web
     image: web
     build:
-      context: ./web-nodejs-angular
+      context: ./web-react
       dockerfile: ./Dockerfile
     environment:
       PORT: 3000
-      COOLSTORE_GW_ENDPOINT: http://gateway:8080
+      COOLSTORE_GW_ENDPOINT: http://localhost:8080
     ports:
       - "3000:3000"
     depends_on:
