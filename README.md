@@ -15,16 +15,16 @@ Full-stack microservices demo exploring different Java frameworks (Spring Boot, 
 - **Catalog Service** (Spring Boot) -- REST API for product catalog, backed by PostgreSQL
 - **Inventory Service** (Quarkus) -- REST API for inventory management, backed by PostgreSQL
 - **Gateway Service** (Vert.x) -- API gateway routing requests to catalog and inventory
-- **Web UI** (Node.js + AngularJS) -- storefront calling the gateway
+- **Web UI** (Node.js + React/Vite) -- storefront calling the gateway
 
 ## Tech stack
 
 - Java 21, GraalVM
 - Spring Boot 3.5.14
 - Quarkus 3.33.1 LTS
-- Vert.x 4.5.22
+- Vert.x 5.0.12
 - Node.js 22 LTS
-- AngularJS 1.8 legacy/frozen
+- React 19 + Vite 7 + TypeScript
 - Docker
 
 ## Quick start
@@ -53,13 +53,12 @@ docker compose up -d
 ## Verification notes
 
 - Java service tests are expected to run with local H2-backed test settings.
-- For the legacy Web UI, `node --check server.js` is the current supported syntax check.
-- The historical `npm run lint` and `npm run security-check` scripts are kept for traceability but are known legacy scripts: the XO stack is not compatible with the current Node.js runtime, and `nsp` is discontinued.
+- The Web UI uses a modern verification gate: `npm run verify` plus `node --check server.js`.
+- `npm run security-check` uses `npm audit --audit-level=high`. Current npm audit output may still report moderate transitive findings that do not fail the high-severity gate.
 
 ## Limitations
 
-- AngularJS 1.8 is intentionally kept as a legacy frontend layer. It is end-of-life and frozen in this repository.
-- The frontend is not being rewritten to React, Vue, or modern Angular as part of this demo.
+- The frontend lives in `web-react` and runs on React/Vite/TypeScript.
 - Spring Boot, Quarkus, Vert.x, and Node.js services remain separate on purpose so the repository can compare framework styles.
 - This project is not production-ready and should not be used as a template for production authentication, payments, or user accounts.
 
