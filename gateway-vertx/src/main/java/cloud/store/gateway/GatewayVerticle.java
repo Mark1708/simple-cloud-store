@@ -89,8 +89,7 @@ public class GatewayVerticle extends AbstractVerticle {
                 .rxSend()
                 .flatMap(resp -> {
                     if (resp.statusCode() != 200) {
-                        return Single.error(new RuntimeException(
-                                "Catalog returned status " + resp.statusCode()));
+                        return Single.error(new RuntimeException("Catalog returned status " + resp.statusCode()));
                     }
                     List<JsonObject> listOfProducts = new ArrayList<>();
                     for (Object product : resp.body()) {

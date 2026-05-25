@@ -14,8 +14,7 @@ public class TestMainVerticle {
     @BeforeEach
     void deploy_verticle(Vertx vertx, VertxTestContext testContext) {
         Checkpoint checkpoint = testContext.checkpoint();
-        vertx.deployVerticle(new GatewayVerticle())
-                .onComplete(testContext.succeeding(id -> checkpoint.flag()));
+        vertx.deployVerticle(new GatewayVerticle()).onComplete(testContext.succeeding(id -> checkpoint.flag()));
     }
 
     @Test
