@@ -9,4 +9,4 @@ FROM eclipse-temurin:21-jre-alpine
 WORKDIR /app
 COPY --from=build /app/build/libs/*-fat.jar gateway.jar
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "/app/gateway.jar", "run", "cloud.store.gateway.GatewayVerticle"]
+ENTRYPOINT ["java", "-jar", "/app/gateway.jar", "cloud.store.gateway.GatewayVerticle"]
