@@ -1,0 +1,58 @@
+{
+  "name": "simple-cloud-store-web",
+  "description": "React Web UI for the CoolStore microservices demo",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "e2e": "playwright test",
+    "e2e:compose": "sh ./scripts/e2e-compose.sh",
+    "typecheck": "tsc --noEmit",
+    "security-check": "npm audit --audit-level=high",
+    "verify": "npm run typecheck && npm run lint && npm run test && npm run build && npm run security-check",
+    "start": "node ./bin/www"
+  },
+  "main": "./bin/www",
+  "files": [
+    "package.json",
+    "bin",
+    "app",
+    "dist",
+    "server.js",
+    "src"
+  ],
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@playwright/test": "^1.56.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "jsdom": "^27.2.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.4",
+    "vite": "^7.2.4",
+    "vitest": "^4.0.13"
+  },
+  "dependencies": {
+    "@patternfly/patternfly": "^6.3.7",
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "debug": "^4.4.3",
+    "express": "^5.1.0",
+    "kube-probe": "^0.3.0",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1"
+  }
+}

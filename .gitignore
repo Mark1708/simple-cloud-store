@@ -1,2 +1,9 @@
 .env
 .idea/
+
+# Generated build outputs
+build/
+*/build/
+web-react/dist/
+web-react/playwright-report/
+web-react/test-results/

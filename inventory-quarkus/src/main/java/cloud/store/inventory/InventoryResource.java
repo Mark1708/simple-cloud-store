@@ -2,6 +2,7 @@ package cloud.store.inventory;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.ws.rs.GET;
+import jakarta.ws.rs.NotFoundException;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
@@ -11,12 +12,14 @@ import jakarta.ws.rs.core.MediaType;
 @ApplicationScoped
 public class InventoryResource {
 
-
     @GET
     @Path("/{itemId}")
     @Produces(MediaType.APPLICATION_JSON)
     public Inventory getAvailability(@PathParam("itemId") long itemId) {
         Inventory inventory = Inventory.findById(itemId);
+        if (inventory == null) {
+            throw new NotFoundException("Inventory item not found: " + itemId);
+        }
         return inventory;
     }
 }

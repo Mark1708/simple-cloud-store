@@ -12,7 +12,6 @@ public class Inventory extends PanacheEntity {
     @Column
     public int quantity;
 
-
     @Override
     public String toString() {
         return "Inventory [Id='" + id + '\'' + ", quantity=" + quantity + ']';
