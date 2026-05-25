@@ -2,6 +2,7 @@ FROM eclipse-temurin:21-jdk-alpine AS build
 WORKDIR /app
 COPY gradle gradle
 COPY gradlew build.gradle.kts settings.gradle.kts gradle.properties ./
+COPY build-tools build-tools
 COPY src src
 RUN ./gradlew build -x test --no-daemon
 

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FindBugsFilter>
+    <!-- Critical bugs -->
+    <Match>
+        <Bug category="CORRECTNESS"/>
+    </Match>
+
+    <!-- Potential vulnerabilities -->
+    <Match>
+        <Bug category="SECURITY"/>
+    </Match>
+
+    <!-- NullPointerException -->
+    <Match>
+        <Bug pattern="NP_NULL_ON_SOME_PATH,NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE,NP_NULL_PARAM_DEREF"/>
+    </Match>
+
+    <!-- Resources not closed -->
+    <Match>
+        <Bug pattern="OBL_UNSATISFIED_OBLIGATION,OS_OPEN_STREAM"/>
+    </Match>
+</FindBugsFilter>

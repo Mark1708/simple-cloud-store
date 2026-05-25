@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FindBugsFilter>
+    <!-- Классы с аннотацией @Generated -->
+    <Match>
+        <Annotation name="javax.annotation.Generated"/>
+    </Match>
+    <Match>
+        <Annotation name="jakarta.annotation.Generated"/>
+    </Match>
+
+    <!-- Сгенерированные утилиты OpenAPI (без @Generated аннотации) -->
+    <Match>
+        <Source name="~ApiUtil\.java"/>
+    </Match>
+
+    <!-- Find Security Bugs: SLF4J parameterized logging безопасен от CRLF injection -->
+    <Match>
+        <Bug pattern="CRLF_INJECTION_LOGS"/>
+    </Match>
+</FindBugsFilter>
