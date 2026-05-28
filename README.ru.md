@@ -58,22 +58,22 @@ Gateway также опубликован на `http://localhost:8080`.
 | Gateway | `gateway-vertx` | Vert.x 5.0.12, Java 21 | `/api/products`; `/health`; static `/*` | Compose `8080`; `HTTP_PORT` default `8080` | Вызывает catalog `/api/catalog` и inventory `/api/inventory/{itemId}` | `./gradlew test`; `./gradlew nativeCompile` |
 | Database | Compose service | PostgreSQL | Service data store | Compose `5432` | Настраивается через `.env` | Запускается через `docker compose up -d` |
 
-## Request flow
+## Поток запросов
 
 ```text
 Browser
-  -> Web UI on localhost:3000
-  -> Gateway on localhost:8080
-  -> Catalog service /api/catalog on internal port 8080
-  -> Inventory service /api/inventory/{itemId} on internal port 8080
-  -> PostgreSQL on compose port 5432
+  -> Web UI на localhost:3000
+  -> Gateway на localhost:8080
+  -> Catalog service /api/catalog на внутреннем порту 8080
+  -> Inventory service /api/inventory/{itemId} на внутреннем порту 8080
+  -> PostgreSQL на compose-порту 5432
 ```
 
 Gateway объединяет вызовы catalog и inventory для `/api/products`. Web service является текущим публичным frontend и построен на React, Vite и TypeScript.
 
 ## Команды локальной разработки
 
-### Root stack
+### Корневой stack
 
 ```shell
 docker compose up -d
