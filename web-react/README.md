@@ -7,7 +7,7 @@ Web UI for the Simple Cloud Store demo. The runtime frontend is React, Vite, and
 ```shell
 npm ci
 npm run build
-COOLSTORE_GW_ENDPOINT=http://localhost:8090 PORT=3000 npm start
+COOLSTORE_GW_ENDPOINT=http://localhost:8080 PORT=3000 npm start
 ```
 
 For Vite development mode:
@@ -24,7 +24,9 @@ The Node host exposes `/config.js`, which sets `window.COOLSTORE_CONFIG` for the
 - `SECURE_COOLSTORE_GW_ENDPOINT` configures the HTTPS gateway endpoint.
 - `PORT` configures the Node host port.
 
-## Verification
+## Maintenance notes
+
+These commands are useful when changing the web UI. They are not required for simply running the main demo path.
 
 ```shell
 npm run typecheck

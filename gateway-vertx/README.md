@@ -7,8 +7,8 @@
 # Сборка нативного образа
 ./gradlew nativeCompile
 
-# Запуск приложения
-./build/native/nativeCompile/gateway run cloud.store.gateway.GatewayVerticle
+# Запуск нативного приложения
+./build/native/nativeCompile/gateway
 
 # Сборка
 docker build -f ./Dockerfile -t gateway .
