@@ -140,3 +140,7 @@ cd gateway-vertx
 ## Status
 
 Portfolio/demo project. The code is public as an architecture and implementation reference, not as a production-ready service.
+
+## License
+
+[MIT](LICENSE)
